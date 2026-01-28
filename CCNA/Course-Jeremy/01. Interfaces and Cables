@@ -1,0 +1,14 @@
+RJ ==> Registered Jack (known Etherent Ports)
+UTP cables ==> Unshielded twisted pairs cables
+
+** UTP cables are TWISTED cuz this helps protecting them from EMI (ElectroMagnetic Interference)
+
+* Full-Duplex means that both devices can send and receive data at the same time.
+
+* strait through cables doesn't allow devices having the same Tx and Rx pins to transmit data.
+
+* crossover cables allow devices having the same Tx and Rx pins to transmit data by crossing over their cables.
+
+* ALL devices (except switches) transmit on pins 1 and 2 and receive on pins 3 and 6
+
+* AUTO-MDIX makes sure that the nabeur can transmit and receive data on these pins.
