@@ -11,7 +11,8 @@ docker run
     --rm ==> removes the image directly after running it.
     --tty ==> gives the user a real shell simulator.
     --name <container-name> ==> gives a name to the container.
-    --it ==> interactive + tty
+    -it ==> interactive + tty
+    -e ENV=VALE ==> environment variable.
 ```
 
 ### lists all available images.
