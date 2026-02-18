@@ -11,8 +11,7 @@ docker run
     --rm ==> removes the image directly after running it.
     --tty ==> gives the user a real shell simulator.
     --name <container-name> ==> gives a name to the container.
-    -it ==> interactive + tty
-    -e ENV=VALE ==> environment variable.
+    --it ==> interactive + tty
 ```
 
 ### lists all available images.
@@ -24,11 +23,6 @@ docker ps
 ### starts a suspended container in ur device.
 ```
 docker start <container-name>
-```
-
-### stops a cointainer.
-```
-docker stop <container-name>
 ```
 
 ### attaches to a running container's shell.
@@ -50,11 +44,54 @@ docker run -it --mount source=<volume-name>,destination=/path/to/file <container
 
 ### Example: saving postgress database into a volume.
 ```
-docker volume create pgdata
+dock
 docker run -d \ ==> for detach
-    --name postgress-db
+    --name postgress-db \
     -e POSTGRESS_PASSWORD modpass \
-    -v pgadmin:/var/lib/postgresql/data \
+    -v <volume-name> \
     -p 5432:5432 \
-    postgres
+```
+
+# Docker Files
+[https://docs.docker.com/reference/dockerfile/][Dockerfile] full instructions and convintions.
+
+### specifies the image we are going to use.
+```Dockerfile
+FROM <image-name>
+```
+
+### runs a terminal command inside the container.
+```Dockerfile
+RUN <command-name>
+```
+
+### Runs a dockerfile (builds the container)
+```
+docker build . (or Dockerfile path)
+docker build -t name:tag (to avoid hash names.)
+```
+
+### copies my cwd into the container.
+```Dockerfile
+COPY . .
+```
+
+### specifies default command to run when running the container.
+```Dockerfile
+CMD ["npm", "run", "dev"] # Example.
+```
+
+### specifies the working directory inside the image.
+```Dockerfile
+WORKDIR /path/to/dir/
+```
+
+### setting an environment variable.
+```Dockerfile
+ENV key value
+```
+
+# docker ignore file.
+```
+extension: .dockerignore
 ```
