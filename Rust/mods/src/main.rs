@@ -21,6 +21,9 @@ use std::{cmp::Ordering, io};
 
 use std::io::{self, Write};
 
+// imports everything.
+use std::collections::*;
+
 fn main() {
     println!("Hello world");
 }
