@@ -60,3 +60,4 @@ pub fn main() {
 
     println!("MultiType: {:?}", row);
 } // all vectors will go out of scope (empty)
+
