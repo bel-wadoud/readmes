@@ -1,0 +1,52 @@
+   0.077439898s  INFO prepare_target{force=false package_id=Rust v0.1.0 (/home/wadoud/Projects/Rust) target="Rust"}: cargo::core::compiler::fingerprint: fingerprint error for Rust v0.1.0 (/home/wadoud/Projects/Rust)/Check { test: false }/TargetInner { name: "Rust", doc: true, ..: with_path("/home/wadoud/Projects/Rust/src/main.rs", Edition2024) }
+   0.077466991s  INFO prepare_target{force=false package_id=Rust v0.1.0 (/home/wadoud/Projects/Rust) target="Rust"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/wadoud/Projects/Rust/target/debug/.fingerprint/Rust-f3318e6788355574/bin-Rust`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: __libc_start_main
+  16: <unknown>
+   0.078265154s  INFO prepare_target{force=false package_id=Rust v0.1.0 (/home/wadoud/Projects/Rust) target="Rust"}: cargo::core::compiler::fingerprint: fingerprint error for Rust v0.1.0 (/home/wadoud/Projects/Rust)/Check { test: true }/TargetInner { name: "Rust", doc: true, ..: with_path("/home/wadoud/Projects/Rust/src/main.rs", Edition2024) }
+   0.078277223s  INFO prepare_target{force=false package_id=Rust v0.1.0 (/home/wadoud/Projects/Rust) target="Rust"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/wadoud/Projects/Rust/target/debug/.fingerprint/Rust-f0ff254d5cfdde8d/test-bin-Rust`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <unknown>
+   1: <unknown>
+   2: <unknown>
+   3: <unknown>
+   4: <unknown>
+   5: <unknown>
+   6: <unknown>
+   7: <unknown>
+   8: <unknown>
+   9: <unknown>
+  10: <unknown>
+  11: <unknown>
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: __libc_start_main
+  16: <unknown>
+    Checking Rust v0.1.0 (/home/wadoud/Projects/Rust)
+error: could not compile `Rust` (bin "Rust" test) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `Rust` (bin "Rust") due to 1 previous error
