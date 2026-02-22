@@ -18,13 +18,19 @@ mod errors;
 use errors::main as errrs;
 */
 
+/*
 mod generics;
 use generics::main as gens;
+*/
+
+mod traits;
+use traits::main as traits;
 
 fn main() {
     // vecs();
     // strs();
     // hashs();
     // errrs();
-    gens();
+    // gens();
+    traits();
 }
