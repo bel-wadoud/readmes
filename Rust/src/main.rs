@@ -13,12 +13,18 @@ mod hashmaps;
 use hashmaps::main as hashs;
 */
 
+/*
 mod errors;
 use errors::main as errrs;
+*/
+
+mod generics;
+use generics::main as gens;
 
 fn main() {
     // vecs();
     // strs();
     // hashs();
-    errrs();
+    // errrs();
+    gens();
 }
