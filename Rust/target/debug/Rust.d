@@ -1,1 +1,1 @@
-/home/wadoud/Projects/Rust/target/debug/Rust: /home/wadoud/Projects/Rust/src/main.rs /home/wadoud/Projects/Rust/src/traits.rs
+/home/wadoud/Projects/Rust/target/debug/Rust: /home/wadoud/Projects/Rust/src/lifetimes.rs /home/wadoud/Projects/Rust/src/main.rs

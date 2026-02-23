@@ -22,9 +22,13 @@ use errors::main as errrs;
 mod generics;
 use generics::main as gens;
 */
-
+/*
 mod traits;
 use traits::main as traits;
+*/
+
+mod lifetimes;
+use lifetimes::main as lifetimes;
 
 fn main() {
     // vecs();
@@ -32,5 +36,6 @@ fn main() {
     // hashs();
     // errrs();
     // gens();
-    traits();
+    // traits();
+    lifetimes();
 }

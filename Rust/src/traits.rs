@@ -22,7 +22,7 @@ impl Summary for NewsLetter {
 // that pattern.
 // we can use multiple traits by using + sign, (Summary + Display)
 pub fn notify<T: Summary>(item: &T) {
-    println!("Breaking news! {}", item.summarize());
+    println!("{}", item.summarize());
 }
 
 pub fn random_func<T: Display + Clone, U: Display + Summary>(inp: &T, outp: &U) {}
