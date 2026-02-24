@@ -27,8 +27,13 @@ mod traits;
 use traits::main as traits;
 */
 
+/*
 mod lifetimes;
 use lifetimes::main as lifetimes;
+*/
+
+mod tests;
+use tests::main as testing;
 
 fn main() {
     // vecs();
@@ -37,5 +42,6 @@ fn main() {
     // errrs();
     // gens();
     // traits();
-    lifetimes();
+    // lifetimes();
+    testing();
 }
