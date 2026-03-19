@@ -16,7 +16,7 @@ docker run
 
 ### lists all available images.
 ```
-docker ps 
+docker pst
     -a ==> for all (inactive)
 ```
 
@@ -38,7 +38,7 @@ docker volume create <volume-name>
 
 ### runs a container with volumes.
 ```
-docker run -it --mount source=<volume-name>,destination=/path/to/file <container-name>
+docker run -it --mount /path/on/host:/path/on/container <container-name>
 ```
 **Note:** docker automatically creates the /path/to/file
 
@@ -94,4 +94,9 @@ ENV key value
 # docker ignore file.
 ```
 extension: .dockerignore
+```
+
+### switching to another user.
+```Dockerfile
+USER <username>
 ```
