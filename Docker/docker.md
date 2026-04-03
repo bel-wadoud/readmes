@@ -100,3 +100,76 @@ extension: .dockerignore
 ```Dockerfile
 USER <username>
 ```
+
+### exposing a port.
+```Dockerfile
+EXPOSE <PORT> (this is used just a reference for users to know that this container expects port 3000, it doesn't affect how to container image behaves)
+
+```
+
+### multistaging.
+```Dockerfile
+FROM package as <name> (this will create a stage that will be overritten later)
+```
+
+### Copying from a stage.
+```Dockerfile
+COPY --from=<name> from to
+```
+
+### Copying as independent layer
+```Dockerfile
+COPY --link from to (makes the copied layer completely independent from the layers before it)
+```
+
+### ARGS.
+```Dockerfile
+ARG NAMECAMELCASED=VALUE (lets you pass variables at build time via docker build. Think of it like function parameters for your Dockerfile.)
+```
+
+### HEREDOCS.
+This is a newer Docker syntax that lets you write multi-line commands cleanly without the ugly backslash chain.
+```Dockerfile
+# syntax=docker/dockerfile:1 (at beggining)
+RUN <<EOF
+cmd 1 
+cmd 2 
+cmd 3 
+...etc
+EOF
+```
+
+## Docker Secrets.
+There are two contexts where secrets work differently — BuildKit secrets (build time) and Swarm/Compose secrets (run time).
+
+### 1. Build time.
+```Dockerfile
+# syntax=docker/dockerfile:1 (at beggining)
+```
+Then mount the secret temporarily during that one RUN step:
+```Dockerfile
+RUN --mount=type=secret,id=npm_token \
+    NPM_TOKEN=$(cat /run/secrets/npm_token) \
+    npm install
+```
+and pass it at build time.
+```bash
+docker build --secret id=npm_token,src=./.npmrc .
+```
+
+### 2. Run time.
+-- docker compose (see this later)
+
+## Most used docker commands.
+```bash
+docker run 
+=>
+    -d => for detach means it runs the container in the background.
+    --env => to specify an environment variable.
+    --interactive, -i, --tty, -t ==> runs a tty interactive shell inside the container.
+    --mount, --volume, -v ==> to mount and load storage volumes.
+    --name ==> to specify a container name.
+    --network, --net => to run a container in a specific docker network.
+    -p => to connect a port between the host and the container
+    --rm ==> when the container stops it's removed.
+```
